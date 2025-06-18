@@ -8,14 +8,14 @@ import Confetti from "react-confetti";
 
 import { type Cell, type Player, GoBoard1 } from "@/components/go-board1";
 
-const _BOARD_WIDTH = 17;
+const _BOARD_WIDTH = 19;
 const context = {
   BOARD_WIDTH: _BOARD_WIDTH,
   board: Array.from<unknown, Cell>({ length: _BOARD_WIDTH ** 2 }, (_, i) => ({
     id: i,
     row: Math.floor(i / _BOARD_WIDTH),
     col: i % _BOARD_WIDTH,
-    owner: Math.random() > 0.3 ? "white" : "black",
+    owner: null, //i % 2 === 0 ? "black" : "white",
   })),
   currentPlayer: null as Player | null,
 };
